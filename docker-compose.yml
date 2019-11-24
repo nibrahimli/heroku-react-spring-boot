@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+    db:
+      image: mysql:latest
+      restart: always
+      ports:
+        - "3309:3306"
+      environment:
+        - MYSQL_USER=dadam
+        - MYSQL_PASSWORD=dadam
+        - MYSQL_DATABASE=dadam
+        - MYSQL_ROOT_PASSWORD=root
+      volumes:
+        - my-db:/var/lib/mysql
+
+# Names our volume
+volumes:
+  my-db:
